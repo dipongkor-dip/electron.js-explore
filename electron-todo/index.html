@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="renderer.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Todo App</h1>
+
+      <form id="todo-form">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Enter a todo..."
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul id="todo-list"></ul>
+    </main>
+  </body>
+</html>
