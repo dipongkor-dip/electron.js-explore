@@ -1,12 +1,80 @@
+
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;"
+    />
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="/src/index.css" />
   </head>
+
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">ELECTRON DESKTOP APP</p>
+          <h1>My Todo List</h1>
+          <p class="subtitle">Organize your day, one task at a time.</p>
+        </div>
+
+        <div class="task-counter">
+          <span id="todo-count">0 tasks</span>
+        </div>
+      </header>
+
+      <section class="todo-section">
+        <h2>Add a task</h2>
+
+        <form id="todo-form">
+          <label class="sr-only" for="todo-input">Task title</label>
+
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="What do you need to do?"
+            maxlength="500"
+            required
+          />
+
+          <button id="submit-button" class="btn-primary" type="submit">
+            Add Todo
+          </button>
+
+          <button
+            id="cancel-button"
+            class="btn-secondary"
+            type="button"
+            hidden
+            disabled
+          >
+            Cancel
+          </button>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="todo-section">
+        <div class="list-heading">
+          <h2>Your tasks</h2>
+        </div>
+
+        <ul id="todo-list" aria-label="Todo list"></ul>
+
+        <p id="empty-message" class="empty-message">
+          No tasks yet. Add your first task above!
+        </p>
+      </section>
+
+      <footer class="app-footer">
+        <span>Your tasks are saved locally on this device.</span>
+      </footer>
+    </main>
+
     <script type="module" src="/src/renderer.ts"></script>
   </body>
 </html>
