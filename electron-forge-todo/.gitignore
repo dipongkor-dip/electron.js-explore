@@ -143,4 +143,4 @@ vite.config.ts.timestamp-*
 .vite/
 
 # Electron-Forge
-out/
+# out/

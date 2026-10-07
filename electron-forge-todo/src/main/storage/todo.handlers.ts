@@ -6,8 +6,6 @@ import {
   updateTodo,
 } from "./todo.repository";
 
-console.log("✅ Todo IPC handlers file loaded");
-
 ipcMain.handle("todos:list", async () => {
   return await readTodos();
 });
@@ -16,8 +14,6 @@ ipcMain.handle("todos:create", async (_event, title: unknown) => {
   if (typeof title !== "string") {
     throw new Error("Invalid Todo title.");
   }
-
-  console.log("Registering todos:create handler");
 
   return await createTodo(title);
 });
